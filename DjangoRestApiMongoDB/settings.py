@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Tutorials application 
-    'tutorials.apps.TutorialsConfig',
+    # App application 
+    'users.apps.AppConfig',
     # CORS
     'corsheaders',
 ]
@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'DjangoRestApiMongoDB.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'bezkoder_db',
+        'NAME': 'django_db',
         'HOST': '127.0.0.1',
         'PORT': 27017,
     }
