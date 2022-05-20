@@ -12,7 +12,7 @@ def validate_email(value):
 
 # password validator function
 def validate_password(value):
-    if value.length > 8:
+    if len(value) > 8:
         return value
     else:
         raise ValidationError("Password must be equal or more than 8 characters")
@@ -26,6 +26,13 @@ class User(models.Model):
                                   'unique': "A user with that email already exists.",
                               })
     password = models.CharField(max_length=20, blank=False, default='', validators =[validate_password])
+
+    # enum data type
+    class UserGender(models.TextChoices):
+        MALE = 'male'
+        FEMALE = 'female'
+    gender = models.CharField(max_length=6, choices=UserGender.choices, default=UserGender.MALE) 
+
     # enum data type
     class UserRole(models.TextChoices):
         ADMIN = 'admin'

@@ -36,9 +36,9 @@ def user_list(request):
  
  
 @api_view(['GET', 'PUT', 'DELETE'])
-def user_detail(request, pk):
+def user_detail(request, id):
     try: 
-        user = User.objects.get(pk=pk) 
+        user = User.objects.get(id=id) 
     except user.DoesNotExist: 
         return JsonResponse({'message': 'The user does not exist'}, status=status.HTTP_404_NOT_FOUND) 
  

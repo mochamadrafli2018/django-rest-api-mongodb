@@ -3,6 +3,6 @@
   
 from django.urls import include, re_path
  
-urlpatterns = [ 
+urlpatterns = [
     re_path(r'^', include('users.urls')),
 ]
