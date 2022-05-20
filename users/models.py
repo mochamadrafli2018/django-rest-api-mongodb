@@ -25,7 +25,9 @@ class User(models.Model):
                               error_messages={
                                   'unique': "A user with that email already exists.",
                               })
-    password = models.CharField(max_length=20, blank=False, default='', validators =[validate_password])
+    password = models.CharField(max_length=20, 
+                                blank=False, default='', 
+                                validators =[validate_password])
 
     # enum data type
     class UserGender(models.TextChoices):

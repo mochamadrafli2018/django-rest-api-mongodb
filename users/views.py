@@ -47,9 +47,9 @@ def user_detail(request, id):
         return JsonResponse(user_serializer.data) 
  
     elif request.method == 'PUT': 
-        user_data = JSONParser().parse(request) 
-        user_serializer = UserSerializer(user, data=user_data) 
-        if user_serializer.is_valid(): 
+        user_data = JSONParser().parse(request)
+        user_serializer = UserSerializer(user, data=user_data)
+        if user_serializer.is_valid():
             user_serializer.save() 
             return JsonResponse(user_serializer.data) 
         return JsonResponse(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
